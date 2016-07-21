@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  get 'library/index'
+
+	root 'library#index'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
