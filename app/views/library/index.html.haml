@@ -1,0 +1,6 @@
+.section
+  #search
+    =form_tag library_search_path, method: 'get', remote: true do
+      =text_field_tag :search, nil, placeholder: 'Artist name, Album name, Song Title'
+      =submit_tag 'Search'
+.results

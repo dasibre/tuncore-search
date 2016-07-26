@@ -7,11 +7,13 @@ RSpec.describe LibraryController, type: :controller do
       get :index
       expect(response).to have_http_status(:success)
     end
-
-	  it 'returns list of results for given query' do
-		  get :index, {search: 'Hankuna Matata'}
-		  expect(assigns(:results))
-	  end
   end
+
+	describe 'GET #search' do
+		it 'returns list of results for given query' do
+			get :search, {search: 'Song title'}
+			expect(assigns(:results))
+		end
+	end
 
 end
