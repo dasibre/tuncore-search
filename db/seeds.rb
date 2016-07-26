@@ -6,6 +6,7 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
+#fetching data from spotify requires rspotify gem
 # require 'rspotify'
 # elton_john = Artist.create!(name: 'Elton John')
 # lion_king = Album.create!(title: 'Lion King Sound track', artist: elton_john)
