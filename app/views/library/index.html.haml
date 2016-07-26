@@ -1,6 +1,7 @@
-.section
-  #search
-    =form_tag library_search_path, method: 'get', remote: true do
-      =text_field_tag :search, nil, placeholder: 'Artist name, Album name, Song Title'
-      =submit_tag 'Search'
+.row
+  .col-lg-offset-3.col-lg-6
+    =form_tag library_search_path, method: 'get', class: 'input-group', remote: true do
+      =text_field_tag :search, nil, placeholder: 'Artist name, Album name, Song Title', class: 'form-control'
+      %span.input-group-btn
+        =submit_tag 'Search', class: 'btn btn-secondary'
 .results
