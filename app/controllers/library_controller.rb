@@ -1,6 +1,6 @@
 class LibraryController < ApplicationController
   def index
-    @results = Library.all
+    @results = Library.search(params[:search])
     respond_to do |format|
       format.html
       format.js {}
