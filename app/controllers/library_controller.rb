@@ -2,7 +2,7 @@ class LibraryController < ApplicationController
   def index
     @results = Library.all
     respond_to do |format|
-      format.html { render template: 'library/index', collection:  @results}
+      format.html
       format.js {}
     end
   end
