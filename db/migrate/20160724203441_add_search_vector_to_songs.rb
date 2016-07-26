@@ -1,5 +1,5 @@
 class AddSearchVectorToSongs < ActiveRecord::Migration
-  def change
+  def up
     add_column :songs, :search_vector, 'tsvector'
 
     execute <<-SQL
