@@ -4,7 +4,11 @@ class Song < ActiveRecord::Base
 
   class << self
     def text_search(query)
-      joins(:artist, :album).where("songs.search_vector @@ #{sanitize_query(query)} or artists.search_vector @@ #{sanitize_query(query)} or albums.search_vector @@ #{sanitize_query(query)}")
+      if query.nil?
+        Song.all.all
+      else
+        joins(:artist, :album).where("songs.search_vector @@ #{sanitize_query(query)} or artists.search_vector @@ #{sanitize_query(query)} or albums.search_vector @@ #{sanitize_query(query)}")
+      end
     end
 
     private

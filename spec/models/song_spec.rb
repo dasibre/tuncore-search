@@ -6,6 +6,12 @@ RSpec.describe Song, type: :model do
 	describe '.text_search(query)' do
 		let(:song) { create(:song) }
 
+		context 'when query string is nil' do
+			it 'returns all songs' do
+				expect(subject.text_search(nil)).to eq([song])
+			end
+		end
+
 		it 'Searches for songs using given query string' do
 			expect(subject.text_search('Sacrifice')).to include(song)
 		end
